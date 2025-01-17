@@ -13,9 +13,8 @@ struct GridListContent: View {
     let missions: [Mission]
     var body: some View {
         ForEach(missions){ mission in
-            NavigationLink{
-                MissionView(mission:mission,astronauts: astronauts)
-            } label : {
+            NavigationLink(value : mission)
+             {
                 VStack{
                     Image(mission.image)
                         .resizable()
